@@ -1,5 +1,5 @@
 /* ============================================
-   Modernize180 — Main JavaScript
+   Modernize180 | Main JavaScript
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
