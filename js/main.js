@@ -38,10 +38,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ---------- Active nav link ---------- */
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    const href = link.getAttribute('href');
-    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+  const path = window.location.pathname.replace(/\/index\.html$/, '/').replace(/\/$/, '') || '/';
+  document.querySelectorAll('.nav-links a:not(.nav-cta)').forEach(link => {
+    const href = link.getAttribute('href').replace(/\/$/, '') || '/';
+    if (href === path || (path === '' && href === '/')) {
       link.classList.add('active');
     }
   });
